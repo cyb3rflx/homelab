@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dashboard-frontend
+  name: dashboard-frontend
+  namespace: dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard-frontend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: dashboard-frontend
+    spec:
+      containers:
+      - image: ghcr.io/cyb3rflx/dashboard-frontend:7a0d7c8937e96bb58e0cfdaa766bdcf5dd23e5a9
+        name: dashboard-frontend
+        ports:
+          - containerPort: 80

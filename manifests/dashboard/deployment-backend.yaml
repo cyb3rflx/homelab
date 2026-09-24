@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dashboard-backend
+  name: dashboard-backend
+  namespace: dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard-backend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: dashboard-backend
+    spec:
+      containers:
+      - image: ghcr.io/cyb3rflx/dashboard-backend:7a0d7c8937e96bb58e0cfdaa766bdcf5dd23e5a9
+        name: dashboard-backend
+        ports:
+          - containerPort: 8000
+        env:
+          - name: ALGORITHM
+            value: HS256
+          - name: ACCESS_TOKEN_EXPIRE_MINUTES
+            value: "30"
+        envFrom:
+          - secretRef:
+              name: secret-backend
+            

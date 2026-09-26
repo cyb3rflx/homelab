@@ -1,0 +1,4 @@
+config:
+  gatewayAPI:
+    enabled: true
+installCRDs: true

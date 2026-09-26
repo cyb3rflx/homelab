@@ -17,7 +17,7 @@ spec:
     ref: values
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: kubesystem
+    namespace: kube-system
   syncPolicy:
     syncOptions:
       - ServerSideApply=true

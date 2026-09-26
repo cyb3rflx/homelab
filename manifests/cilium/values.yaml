@@ -14,3 +14,6 @@ l2announcements:
 operator:
   replicas: 1
 routingMode: tunnel
+nonIdempotentAnnotations:
+  argocd.argoproj.io/compare-options: IgnoreExtraneous
+

@@ -1,0 +1,16 @@
+cluster:
+  name: kubernetes
+gatewayAPI:
+  enableAlpn: true
+  enabled: true
+k8sClientRateLimit:
+  burst: 200
+  qps: 50
+k8sServiceHost: 192.168.178.225
+k8sServicePort: 6443
+kubeProxyReplacement: true
+l2announcements:
+  enabled: true
+operator:
+  replicas: 1
+routingMode: tunnel
